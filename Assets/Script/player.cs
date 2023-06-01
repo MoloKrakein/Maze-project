@@ -41,16 +41,17 @@ public class player : MonoBehaviour
 
     }
 
-    private void collectObjective(){
-        if(Physics2D.OverlapCircle(movePoint.position, 0.2f, objectiveMask)){
-            Destroy(Physics2D.OverlapCircle(movePoint.position, 0.2f, objectiveMask).gameObject);
-            Debug.Log("collected");
-        }
-    }
+    // private void collectObjective(){
+    //     if(Physics2D.OverlapCircle(movePoint.position, 0.2f, objectiveMask)){
+    //         Destroy(Physics2D.OverlapCircle(movePoint.position, 0.2f, objectiveMask).gameObject);
+    //         // Debug.Log("collected");
+    //     }
+    // }
 
     // Update is called once per frame
     void Update()
     {
         playerMovement();
+        // collectObjective();
     }
 }
