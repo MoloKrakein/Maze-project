@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class level : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class level : MonoBehaviour
         // if all objectives are collected, call levelComplete() in levelLogic.cs
         if(objectiveCount == 0){
             Debug.Log("level complete");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
