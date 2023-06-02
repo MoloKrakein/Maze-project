@@ -31,7 +31,12 @@ public class level : MonoBehaviour
         // if all objectives are collected, call levelComplete() in levelLogic.cs
         if(objectiveCount == 0){
             Debug.Log("level complete");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // check if this is the last level if not, load next level else load main menu
+            if(SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1){
+                SceneManager.LoadScene(0);
+            }else{
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 
